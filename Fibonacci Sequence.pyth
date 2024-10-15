@@ -1,0 +1,54 @@
+# Function to calculate the sum of a list of large numbers
+def sum_large_numbers(numbers):
+    total_sum = 0
+    for num in numbers:
+        total_sum += num
+    return total_sum
+
+# Function to calculate the nth Fibonacci number using iteration
+def fibonacci(n):
+    if n <= 0:
+        return 0
+    elif n == 1:
+        return 1
+
+    a, b = 0, 1
+    for _ in range(2, n + 1):
+        a, b = b, a + b
+    return b
+
+# Function to find the factorial of a large number
+def factorial(n):
+    if n == 0 or n == 1:
+        return 1
+    result = 1
+    for i in range(2, n + 1):
+        result *= i
+    return result
+
+# Main function to demonstrate long integer calculations
+def main():
+    # Large numbers to sum
+    large_numbers = [
+        9823478923748923748923748937,
+        1298237498237489237498723947,
+        8298374982374982374982374982,
+        2349872349827349872349872349
+    ]
+
+    # Calculate and print the sum of large numbers
+    total_sum = sum_large_numbers(large_numbers)
+    print(f"Sum of large numbers: {total_sum}")
+
+    # Input: Fibonacci number to calculate
+    n = int(input("Enter a number to find the nth Fibonacci number: "))
+    fib_number = fibonacci(n)
+    print(f"The {n}th Fibonacci number is: {fib_number}")
+
+    # Input: Factorial of a number
+    num_factorial = int(input("Enter a number to find its factorial: "))
+    fact_result = factorial(num_factorial)
+    print(f"The factorial of {num_factorial} is: {fact_result}")
+
+if __name__ == "__main__":
+    main()
